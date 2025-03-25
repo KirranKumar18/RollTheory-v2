@@ -1,0 +1,33 @@
+h1{
+    margin: auto;
+    margin-left: 675px;
+}
+table{
+    margin: 50px;
+    
+    color: white;
+    
+    border-color: white;
+    
+}
+td{
+    padding: 25px;
+    
+}
+th{
+    padding: 30px;
+}
+
+
+.insetBox{
+    height: 250px;
+    width: 250px;
+    background-color: aqua;
+    margin-right: 150px;
+    
+}
+.parent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

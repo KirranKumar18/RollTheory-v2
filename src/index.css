@@ -1,0 +1,17 @@
+/* body {
+ 
+  background-color: white;
+  font-family: 'Inria Sans', sans-serif;
+  
+  
+  
+  } */
+  
+  body {
+    background: linear-gradient(to bottom right,#20004d, #8a1c7c);
+    height: 100vh;
+    margin: 0;
+    font-family: 'Inria Sans', sans-serif;
+    color: white;
+}
+

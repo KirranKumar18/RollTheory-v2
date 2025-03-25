@@ -1,0 +1,47 @@
+useEffect(() => {
+  const fetchExpenses = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from("expenses").select("*");           //query is stored in data
+
+    if (error) {                                                                // if error display error
+      console.error("Error fetching expenses:", error);
+    } else {                                                                    // else stre data in expenses []
+      setExpenses(data);
+    }
+    setLoading(false);
+  };
+
+  fetchExpenses();
+}, []);
+
+
+return (
+  <div>
+    <h1>Expenses</h1>
+
+    {loading ? (<p>Loading...</p>) : (                                  //ternary
+      
+      <table border="1">
+        <thead>
+          <tr>                                                          // header
+            <th>ID</th>
+            <th>Date</th>
+            <th>To/From</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.map((item) => (                                   //render all rows in new rows 
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.Date}</td>
+              <td>{item["To/From"]}</td>
+              <td>${item.Amount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+);
+
