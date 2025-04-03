@@ -1,17 +1,11 @@
-/* body {
+ body {
  
-  background-color: white;
+  background-color: black;
   font-family: 'Inria Sans', sans-serif;
+  color: white;
   
   
+  } 
   
-  } */
-  
-  body {
-    background: linear-gradient(to bottom right,#20004d, #8a1c7c);
-    height: 100vh;
-    margin: 0;
-    font-family: 'Inria Sans', sans-serif;
-    color: white;
-}
+ 
 
