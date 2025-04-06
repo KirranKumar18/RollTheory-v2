@@ -1,0 +1,90 @@
+.Holder{
+  display: flex;
+  
+  background-color: black;
+  gap: 5px;
+}
+
+.List{
+  background-color: aqua;
+  width: 300px;
+  height:700px;
+}
+
+.Menu{
+  background-color: bisque;
+  width: 1000px;
+  height:700px;
+  display: flex;
+  flex-direction: column;   
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Bill{
+  background-color: blueviolet;
+  width: 375px;
+  height:700px;
+}
+
+button{
+  padding: 15px;
+  font-weight: bold;
+  font-stretch: extra-expanded;
+  border-radius: 10px;
+  margin: 80px;
+}
+
+h1{
+  margin-left: 50px;
+  margin-top: 15px;
+  color: black;
+}
+
+   /* .box {
+  flex: 0 0 calc(25% - 10px);
+  background: #e79090;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 75 px;
+  width: 275px;
+  font-size: 14px; /* optional: smaller text */
+ */
+
+
+.box {
+  flex: 0 0 calc(25% - 10px);
+  background: #d56c6c;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 150px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center everything horizontally */
+  justify-content: center;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.quantity-row {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Align vertically centered */
+  justify-content: center;
+  background-color: rgb(216, 252, 124);
+}
+
+.defButton {
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+
+
+
+

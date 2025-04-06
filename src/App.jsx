@@ -47,8 +47,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Expence from "./expence"; // Import Expence Component
-import Home from "./home"; // Import Home Component
-import Popup from "./Popup"; // Import Popup Component
+
+
 import "./App.css";
 
 function App() {
@@ -74,13 +74,13 @@ function App() {
 
         {/* Routes for Navigation */}
         <Routes>
-          <Route path="/" element={<Home />} />
+         
           <Route path="/home" element={<Home />} />
           <Route path="/expence" element={<Expence />} />
         </Routes>
 
         {/* Show Popup when showPopup is true */}
-        {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+        
       </>
     </Router>
   );

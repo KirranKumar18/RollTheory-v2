@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "./supabase";
+import { supabase } from "./Supabase";
 import "./expence.css";
 
 function expence() {
