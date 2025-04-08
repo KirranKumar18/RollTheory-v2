@@ -15,7 +15,8 @@ function Orderpage(){
   const [Item,setItem]=useState("Rolls");
   const [rollQuantity,setrollQuantity]=useState([0,0,0,0,0,0,0,0,0]);
   const [friesQuantity,setfriesQuantity]=useState([0,0,0,0,0,0,0,0,0]);
-  const [OrderedItems,setOrderedItems]=useState([]);
+  const [OrderedItems, setOrderedItems] = useState([]);
+
 
   // for( const i in rollQuantity){
   //   if(i!=0){
@@ -24,22 +25,32 @@ function Orderpage(){
   // }
   
   useEffect(() => {
-    const newOrder = [];
+    const newOrder = [];       // contains only 2 obj  { name:      ,quantity:     ,cost:     }
   
     rollQuantity.forEach((qty, index) => {
       if (qty > 0) {
-        newOrder.push(`${rolls[index]} x${qty}`);
+        newOrder.push({
+          name: rolls[index],
+          quantity: qty,
+          cost: rollsPrice[index] * qty
+        });
       }
     });
   
     friesQuantity.forEach((qty, index) => {
       if (qty > 0) {
-        newOrder.push(`${Fries[index]} x${qty}`);
+        newOrder.push({
+          name: Fries[index],
+          quantity: qty,
+          cost: friesPrice[index] * qty
+        });
       }
     });
   
     setOrderedItems(newOrder);
   }, [rollQuantity, friesQuantity]);
+  
+    
 
   //  -------------------------------------------------
 
@@ -291,15 +302,38 @@ function DecrementFries(y){
           </div>
 
           <div className="Bill">
-          <h1>YOUR ORDER</h1>
-          <ul>
-              {OrderedItems.map((item, index) => <li key={index}>{item} cost {getCost(item,index)}</li>)}
-          </ul>     
+  <h1>YOUR ORDER</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {OrderedItems.map((item, index) => (
+        <tr key={index}>
+          <td>{item.name}</td>
+          <td>{item.quantity}</td>
+          <td>₹{item.cost}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
-          </div>
+
+
+
       </div>
     </>
   )
 }
 
 export default Orderpage
+// {OrderedItems.map((item, index) => (      // item is the obj index is either 0 or 1
+//   <li key={index}>
+//     {item.name} x{item.quantity} - ₹{item.cost}
+//   </li>
+// ))}
