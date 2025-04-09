@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"
 import React from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import "./Orderpage.css"
 import expence from "./expence.jsx"
 
@@ -16,6 +16,7 @@ function Orderpage(){
   const [rollQuantity,setrollQuantity]=useState([0,0,0,0,0,0,0,0,0]);
   const [friesQuantity,setfriesQuantity]=useState([0,0,0,0,0,0,0,0,0]);
   const [OrderedItems, setOrderedItems] = useState([]);
+  const [TotalCost,setTotalCost]=useState(0);
 
 
   // for( const i in rollQuantity){
@@ -31,7 +32,7 @@ function Orderpage(){
       if (qty > 0) {
         newOrder.push({
           name: rolls[index],
-          quantity: qty,
+          quantity: qty,  
           cost: rollsPrice[index] * qty
         });
       }
@@ -48,7 +49,26 @@ function Orderpage(){
     });
   
     setOrderedItems(newOrder);
+    console.log(newOrder)
   }, [rollQuantity, friesQuantity]);
+
+
+  useEffect( ()=>{
+
+    let totCost=TotalCost;
+    
+      OrderedItems.forEach((item,index)=>{
+        
+      totCost=item.quantity*item.cost
+      console.log("totCost :",totCost)     //this is corret
+      console.log("at position :",index)
+      setTotalCost(totCost)                 // one step back updation
+      console.log("TotalCost: ",TotalCost)
+
+    })
+
+
+  },[OrderedItems])
   
     
 
