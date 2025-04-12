@@ -17,13 +17,8 @@ function Orderpage(){
   const [friesQuantity,setfriesQuantity]=useState([0,0,0,0,0,0,0,0,0]);
   const [OrderedItems, setOrderedItems] = useState([]);
   const [TotalCost,setTotalCost]=useState(0);
+  const [TotalItem,setTotalItem]=useState(0);
 
-
-  // for( const i in rollQuantity){
-  //   if(i!=0){
-  //     setOrderedItems(prev => [...prev,i])
-  //   }
-  // }
   
   useEffect(() => {
     const newOrder = [];       // contains only 2 obj  { name:      ,quantity:     ,cost:     }
@@ -53,24 +48,32 @@ function Orderpage(){
   }, [rollQuantity, friesQuantity]);
 
 
-  useEffect( ()=>{
-
-    let totCost=TotalCost;
+  useEffect(() => {
+    let totCost = 0;
+  
+    OrderedItems.forEach((item, index) => {
+      const itemCost =  item.cost;
+      totCost += itemCost;
+      console.log(`Item ${index}: ₹${itemCost}`);
+    });
+  
+    console.log("TotalCost updated to:", totCost);
+    setTotalCost(totCost); 
     
+  
+  }, [OrderedItems]);
+  
+  useEffect(()=>{
+      let totItem=0
       OrderedItems.forEach((item,index)=>{
-        
-      totCost=item.quantity*item.cost
-      console.log("totCost :",totCost)     //this is corret
-      console.log("at position :",index)
-      setTotalCost(totCost)                 // one step back updation
-      console.log("TotalCost: ",TotalCost)
-
-    })
-
-
+        const qty=item.quantity
+        totItem+=qty;
+        console.log(`the Total items are ${totItem}`);
+      })        
+      
+      setTotalItem(totItem)
   },[OrderedItems])
   
-    
 
   //  -------------------------------------------------
 
@@ -338,7 +341,13 @@ function DecrementFries(y){
           <td>{item.quantity}</td>
           <td>₹{item.cost}</td>
         </tr>
+        
       ))}
+      <tr>
+        <td>TOTAL</td>
+        <td>{TotalItem}</td>
+        <td>₹{TotalCost}</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -352,8 +361,6 @@ function DecrementFries(y){
 }
 
 export default Orderpage
-// {OrderedItems.map((item, index) => (      // item is the obj index is either 0 or 1
-//   <li key={index}>
-//     {item.name} x{item.quantity} - ₹{item.cost}
-//   </li>
-// ))}
+
+
+//   ₹
