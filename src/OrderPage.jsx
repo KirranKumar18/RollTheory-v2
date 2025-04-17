@@ -3,6 +3,7 @@ import React from "react";
 //import { useNavigate } from "react-router-dom";
 import "./Orderpage.css"
 import expence from "./expence.jsx"
+import PlaceOrder from "./PlaceOrder.jsx";
 
 function Orderpage(){
   
@@ -350,8 +351,11 @@ function DecrementFries(y){
       </tr>
     </tbody>
   </table>
-</div>
 
+  <button onClick={() => PlaceOrder(OrderedItems)}>CONFIRM ORDER!</button>
+      
+
+</div>
 
 
 
