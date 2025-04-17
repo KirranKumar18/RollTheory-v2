@@ -1,95 +1,119 @@
-.Holder{
-  display: flex;
-  
-  background-color: black;
-  gap: 5px;
-}
-
-.List{
-  background-color: aqua;
-  width: 300px;
-  height:700px;
-}
-
-.Menu{
-  background-color: bisque;
-  width: 1000px;
-  height:700px;
-  display: flex;
-  flex-direction: column;   
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.Bill{
-  background-color: blueviolet;
-  width: 375px;
-  height:700px;
-}
-
 button{
   padding: 15px;
   font-weight: bold;
   font-stretch: extra-expanded;
   border-radius: 10px;
-  margin: 80px;
+  margin: 25px;
+
+ /*  padding: 15px;
+  font-weight: bold;
+  font-stretch: extra-expanded;
+  border-radius: 10px;
+  margin: 80px;*/
 }
 
-h1{
-  margin-left: 50px;
-  margin-top: 15px;
-  color: black;
+.Holder {
+  display: flex;
+  background-color: black;
+  gap: 5px;
 }
 
-h2{
-  color:black
+.List {
+  background-color: aqua;
+  width: 300px;
+  height: 700px;
+  display: flex; 
+  gap: 20px;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-   /* .box {
-  flex: 0 0 calc(25% - 10px);
-  background: #e79090;
-  text-align: center;
-  padding: 5px;
-  box-sizing: border-box;
-  height: 75 px;
-  width: 275px;
-  font-size: 14px; /* optional: smaller text */
- */
+.Menu {
+  background-color: bisque;
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}
 
+.Bill {
+  background-color: blueviolet;
+  width: 375px;
+  height: 700px;
+}
 
 .box {
-  flex: 0 0 calc(25% - 10px);
-  background: #d56c6c;
-  padding: 10px;
-  box-sizing: border-box;
-  height: 150px;
+  width: 160px;
+  min-height: 110px;
+  padding: 8px;
+  border: 2px solid rgb(196, 74, 74);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center;    /* Center everything horizontally */
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Fixed Text Display */
+.box h1 {
+  font-size: 14px;
+  margin: 0;
   text-align: center;
-  overflow-y: scroll;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: 2.8em; /* 2 lines * line-height */
+  width: 100%;
+  padding: 0 2px;
+  word-break: break-word;
+  color: black;
 }
 
 .quantity-row {
   display: flex;
-  gap: 10px;
-  align-items: center; /* Align vertically centered */
+  gap: 0px;
+  align-items: center;
   justify-content: center;
-  background-color: rgb(216, 252, 124);
+  width: 100px;
+  margin-top: 4px;
   
 }
 
+
 .defButton {
-  padding: 6px 12px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  background: rgb(255, 255, 255);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
   cursor: pointer;
+  font-size: 12px;
+  min-width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.quantity-row h2 {
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+  margin: 0;
+  color: black;
+}
 
-
-
-
+.box-container{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

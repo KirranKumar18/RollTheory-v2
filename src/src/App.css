@@ -1,0 +1,30 @@
+h3 {
+  color: #F1F0E9;
+  font-size: 30px; /* Increase text size */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+
+.navHolder{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width:auto;
+  gap: 125px;
+  background-color: rgba(8, 11, 11, 0.331);
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+button{
+  margin:10px;
+ 
+  background: transparent;
+  border: none;
+  color: #F1F0E9;
+  cursor: pointer;
+  font-size: large;
+
+}
+
